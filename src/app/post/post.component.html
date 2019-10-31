@@ -1,17 +1,16 @@
 <li [ngClass]="{'list-group-item': true,
-              'list-group-item-success': postNote === 'like',
-              'list-group-item-danger': postStatus === 'unlike'}">
+              'list-group-item-success': getColor() === 'green',
+              'list-group-item-danger': getColor() === 'red'}">
 
     <h4 [ngStyle]="{color: getColor()}">{{ postName }}</h4>
 
-    <p>{{ lastUpdate | date: 'y MMMM EEEE d' }}</p>
+    <p class="date">{{ lastUpdate | date: 'short' }}</p>
 
     <p>{{ postContenu }}</p>
 
-    <p>{{ getNote() }}</p>
-
-    <button class="btn btn-success"
-              (click)="onLike()">I love it !</button>
+    <button class="btn btn-success" 
+            style="margin-right:20px"
+            (click)="onLike()">I love it ! ({{ getLike() }})</button>
     <button class="btn btn-danger"
-              (click)="onUnlike()">I don't love it !</button>
+            (click)="onUnlike()">I don't love it ! ({{ getUnlike() }})</button>
   </li>
