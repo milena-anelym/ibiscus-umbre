@@ -11,31 +11,40 @@ export class PostComponent implements OnInit {
   @Input() postContenu: string;
   @Input() postNote: number;
 
-  constructor() { }
+  constructor() {}
 
   lastUpdate = new Date();
 
-  getNote() {
-    return this.postNote;
+  getLike() {
+    return this.like;
+  }
+
+  getUnlike() {
+    return this.unlike;
   }
 
   getColor() {
-    if (this.postNote >= 5) {
+    if (this.like > this.unlike) {
       return "green";
-    } else if (this.postNote < 5) {
+    } else if (this.unlike > this.like) {
       return "red";
+    } else if (this.unlike === this.like) {
+      return "Black";
     }
   }
 
   ngOnInit() {
   }
 
+  like = 0;
+  unlike = 0;
+
   onLike() {
-    this.postNote++;
+    this.like++;
   };
 
   onUnlike() {
-    this.postNote--;
+    this.unlike++;
   };
 
 }
