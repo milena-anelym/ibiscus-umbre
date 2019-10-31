@@ -2,7 +2,7 @@
               'list-group-item-success': getColor() === 'green',
               'list-group-item-danger': getColor() === 'red'}">
 
-    <h4 [ngStyle]="{color: getColor()}">{{ postName }}</h4>
+    <h2 [ngStyle]="{color: getColor()}">{{ postName }}</h2>
 
     <p class="date">{{ lastUpdate | date: 'short' }}</p>
 

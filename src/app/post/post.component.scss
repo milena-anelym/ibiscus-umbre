@@ -1,11 +1,21 @@
-.list-group-item{
+.list-group-item {
     position: relative;
+    margin-bottom: 40px;
 }
 
-.date{
+.date {
     color: grey;
     font-style: italic;
     position: absolute;
     top: 20px;
     right: 20px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+p {
+    margin-bottom: 20px;
 }
